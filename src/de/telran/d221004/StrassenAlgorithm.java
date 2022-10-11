@@ -1,11 +1,64 @@
 package de.telran.d221004;
 
 public class StrassenAlgorithm {
+    // Main driver method
+    public static void main(String[] args) {
+        // Display message
+        System.out.println(
+                "Strassen Multiplication Algorithm Implementation For Matrix Multiplication :\n");
+
+        // Create an object of Strassen class
+        // in he main function
+        StrassenAlgorithm s = new StrassenAlgorithm();
+
+        // Size of matrix
+        // Considering size as 4 in order to illustrate
+        int N = 4;
+
+        // Matrix A
+        // Custom input to matrix
+        int[][] A = {{1, 2, 3, 4},
+                {4, 3, 0, 1},
+                {5, 6, 1, 1},
+                {0, 2, 5, 6}};
+
+        // Matrix B
+        // Custom input to matrix
+        int[][] B = {{1, 0, 5, 1},
+                {1, 2, 0, 2},
+                {0, 3, 2, 3},
+                {1, 2, 1, 2}};
+
+        // Matrix C computations
+
+        // Matrix C calling method to get Result
+        int[][] C = s.multiply(A, B);
+
+        // Display message
+        System.out.println(
+                "\nProduct of matrices A and  B : ");
+
+        // Iterating over elements of 2D matrix
+        // using nested for loops
+
+        // Outer loop for rows
+        for (int i = 0; i < N; i++) {
+            // Inner loop for columns
+            for (int j = 0; j < N; j++)
+
+                // Printing elements of resultant matrix
+                // with whitespaces in between
+                System.out.print(C[i][j] + " ");
+
+            // New line once the all elements
+            // are printed for specific row
+            System.out.println();
+        }
+    }
 
     // Method 1
     // Function to multiply matrices
-    public int[][] multiply(int[][] A, int[][] B)
-    {
+    public int[][] multiply(int[][] A, int[][] B) {
         // Order of matrix
         int n = A.length;
 
@@ -97,8 +150,7 @@ public class StrassenAlgorithm {
 
     // Method 2
     // Function to subtract two matrices
-    public int[][] sub(int[][] A, int[][] B)
-    {
+    public int[][] sub(int[][] A, int[][] B) {
         //
         int n = A.length;
 
@@ -124,8 +176,7 @@ public class StrassenAlgorithm {
 
     // Method 3
     // Function to add two matrices
-    public int[][] add(int[][] A, int[][] B)
-    {
+    public int[][] add(int[][] A, int[][] B) {
 
         //
         int n = A.length;
@@ -153,8 +204,7 @@ public class StrassenAlgorithm {
     // Method 4
     // Function to split parent matrix
     // into child matrices
-    public void split(int[][] P, int[][] C, int iB, int jB)
-    {
+    public void split(int[][] P, int[][] C, int iB, int jB) {
         // Iterating over elements of 2D matrix
         // using nested for loops
 
@@ -171,9 +221,7 @@ public class StrassenAlgorithm {
     // Method 5
     // Function to join child matrices
     // into (to) parent matrix
-    public void join(int[][] C, int[][] P, int iB, int jB)
-
-    {
+    public void join(int[][] C, int[][] P, int iB, int jB) {
         // Iterating over elements of 2D matrix
         // using nested for loops
 
@@ -186,7 +234,7 @@ public class StrassenAlgorithm {
 
                 P[i2][j2] = C[i1][j1];
     }
-
+/*
     // Method 5
     // Main driver method
     public static void main(String[] args)
@@ -243,4 +291,5 @@ public class StrassenAlgorithm {
             System.out.println();
         }
     }
+ */
 }

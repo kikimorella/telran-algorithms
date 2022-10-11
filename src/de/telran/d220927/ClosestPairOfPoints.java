@@ -32,12 +32,12 @@ public class ClosestPairOfPoints {
     private static double MIN_VAL = Double.MAX_VALUE;
 
     // Method to find the min distance
-    public double closestPair(Point[] points){
+    public double closestPair(Point[] points) {
         int n = points.length;
         Point[] xSorted = new Point[n];
         Point[] ySorted = new Point[n];
 
-        for(int i=0; i<n; i++){
+        for (int i = 0; i < n; i++) {
             xSorted[i] = points[i];
             ySorted[i] = points[i];
         }
@@ -47,7 +47,7 @@ public class ClosestPairOfPoints {
         // sort array using y coordinate
         Arrays.sort(ySorted, (p1, p2) -> p1.y - p2.y);
 
-        return closestPair(xSorted, ySorted, 0, n-1);
+        return closestPair(xSorted, ySorted, 0, n - 1);
     }
 
     // recursive call to find the closest pair distance
@@ -62,12 +62,12 @@ public class ClosestPairOfPoints {
 
         // find middle element of the search space
         // to divide the space into two halves
-        int mid = low + (high - low)/2 ;
+        int mid = low + (high - low) / 2;
         Point midPoint = px[mid];
 
         // find left and right min recursively
         double leftMin = closestPair(px, py, low, mid);
-        double rightMin = closestPair(px, py, mid+1, high);
+        double rightMin = closestPair(px, py, mid + 1, high);
 
         // find the min distance from left and right search space
         double minDistance = Math.min(leftMin, rightMin);
@@ -78,11 +78,11 @@ public class ClosestPairOfPoints {
         int stripLeft = -1;
         int stripRight = -1;
 
-        for(int i=low; i<high; i++) {
-            if( Math.abs(py[i].x - midPoint.x) < minDistance ) {
-                if(stripLeft == -1) {
+        for (int i = low; i < high; i++) {
+            if (Math.abs(py[i].x - midPoint.x) < minDistance) {
+                if (stripLeft == -1) {
                     stripLeft = i;
-                }else {
+                } else {
                     stripRight = i;
                 }
             }
@@ -101,7 +101,7 @@ public class ClosestPairOfPoints {
         for (int i = 0; i < points.length; i++) {
             for (int j = i + 1; j < points.length; j++) {
                 double dist = distance(points[i], points[j]);
-                if(dist < min) {
+                if (dist < min) {
                     min = dist;
                 }
                 min = min(min, dist);
@@ -112,13 +112,13 @@ public class ClosestPairOfPoints {
 
     // min distance in strip of points
     private double getMinStripeDistance(Point[] ySorted, int low, int high) {
-        double min = MIN_VAL ;
+        double min = MIN_VAL;
 
         //Pick all points one by one and try the next points till the difference
         //between y coordinates is smaller than d.
         //This is a proven fact that this loop runs at most 6 times
-        for(int i=low; i<=high; i++) {
-            for(int j=i+1; j<=high; j++) {
+        for (int i = low; i <= high; i++) {
+            for (int j = i + 1; j <= high; j++) {
                 min = min(min, distance(ySorted[i], ySorted[j]));
             }
         }
@@ -126,8 +126,8 @@ public class ClosestPairOfPoints {
     }
 
     // Method to find distance between two points p1 nd p2
-    private double distance(Point p1, Point p2){
-        return Math.sqrt((p1.x-p2.x) * (p1.x-p2.x) + (p1.y-p2.y) * (p1.y-p2.y)) ;
+    private double distance(Point p1, Point p2) {
+        return Math.sqrt((p1.x - p2.x) * (p1.x - p2.x) + (p1.y - p2.y) * (p1.y - p2.y));
     }
 
     // method to find min between two values
@@ -141,9 +141,9 @@ public class ClosestPairOfPoints {
         int[] y = {3, 30, 50, 1, 10, 4};
 
         int n = x.length;
-        Point[] points = new Point[n] ;
+        Point[] points = new Point[n];
 
-        for(int i=0; i<n; i++) {
+        for (int i = 0; i < n; i++) {
             points[i] = new Point(x[i], y[i]);
         }
 

@@ -16,9 +16,9 @@ public class MergeSort {
     }
 
     /**
-     Merges two subarrays of arr[].
-     First subarray is arr[l..m]
-     Second subarray is arr[m+1..r]
+     * Merges two subarrays of arr[].
+     * First subarray is arr[l..m]
+     * Second subarray is arr[m+1..r]
      */
     void merge(int arr[], int l, int m, int r) {
 
@@ -65,7 +65,7 @@ public class MergeSort {
     }
 
     /**
-     Main function that sorts arr[l..r] using merge()
+     * Main function that sorts arr[l..r] using merge()
      */
     void sort(int arr[], int l, int r) {
         if (l < r) {
@@ -79,7 +79,7 @@ public class MergeSort {
     }
 
     /**
-     A utility function to print array of size n
+     * A utility function to print array of size n
      */
     static void printArray(int arr[]) {
         int n = arr.length;

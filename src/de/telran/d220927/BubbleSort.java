@@ -7,6 +7,7 @@ public class BubbleSort {
         int nums2[] = {1, 23, 4};
 
         bubbleSort(nums); // BigO O(n^2)
+
     }
 
     static int[] bubbleSort(int[] nums) {

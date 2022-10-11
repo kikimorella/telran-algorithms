@@ -12,7 +12,7 @@ public class Factorialis {
 
     static long fact(int n) {
         long res = 1;
-        while (n >1) {
+        while (n > 1) {
             res *= n;
             n--;
         }

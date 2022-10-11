@@ -23,12 +23,18 @@ public class BinarySearch {
         lineSearch(arr, 99999);
         long ssFinish = System.nanoTime() - ssStart;
 
-        System.out.printf("time for binary search is %d, \n teme for dimple search %d" , bsFinish, ssFinish);
+        System.out.printf("time for binary search is %d, \n time for dimple search %d" , bsFinish, ssFinish);
+        System.out.println(binarySearch(arr, -234_238));
     }
 
     public static int binarySearch(int arr[], int x) { // x = 10
         int l = 0;
         int r = arr.length - 1;
+//        try {
+//            Thread.sleep(100);
+//        } catch (InterruptedException e) {
+//            throw new RuntimeException(e);
+//        }
         while (l <= r) { // {(2, 3, 4,) 10, 40}
             int m = l = (r - l) / 2; // (4 -3) / 2 = 0
             if (arr[m] == x) {
