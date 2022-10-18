@@ -125,4 +125,12 @@ public class MasterTheorem {
             temp[i] = i;
         }
     }
+
+    // O(n!) - факториальная сложность (рекурсия в цикле)
+    static void method5(int n) { // 5
+        for (int i = 0; i < n; i++) { // 5*4*3*2*1
+            System.out.println(n); // const
+            method5(n - 1); // 2
+        }
+    }
 }
