@@ -20,7 +20,7 @@ public class QueueArray {
     private int count; // текущий размер queue
 
 
-    QueueArray(int size){ // Конструктор для инициализации queue
+    QueueArray(int size) { // Конструктор для инициализации queue
         arr = new int[size];
         capacity = size;
         front = 0;
@@ -30,7 +30,7 @@ public class QueueArray {
 
     public int remove() { // Функция для удаления переднего элемента из очереди
         if (isEmpty()) {// проверка на опустошение queue
-         System.out.println("Underflow\nProgram Terminated");
+            System.out.println("Underflow\nProgram Terminated");
             System.exit(-1);
         }
 

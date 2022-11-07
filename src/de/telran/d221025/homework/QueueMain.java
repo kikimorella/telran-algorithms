@@ -1,28 +1,26 @@
 package de.telran.d221025.homework;
 
 public class QueueMain {
-    public static void main (String[] args)
-    {
-        // создаем queue емкостью 5
-        QueueArray q = new QueueArray(5);
+    public static void main(String[] args) {
 
-        q.pushToEnd(1);
-        q.pushToEnd(2);
-        q.pushToEnd(3);
+        QueueArray queue = new QueueArray(4);
 
-        System.out.println("The front element is " + q.peek());
-        q.remove();
-        System.out.println("The front element is " + q.peek());
+        queue.pushToEnd(11); // Inserting 11
+        queue.pushToEnd(92); // Inserting 92
+        queue.pushToEnd(53); // Inserting 53
 
-        System.out.println("The queue size is " + q.size());
+        System.out.println("The front element is " + queue.peek()); // The front element is 11
 
-        q.remove();
-        q.remove();
+        System.out.println("The queue size is " + queue.size()); // The queue size is 3
 
-        if (q.isEmpty()) {
+        queue.remove(); // Removing 11
+        queue.remove(); // Removing 92
+
+        System.out.println("The front element is " + queue.peek()); // The front element is 53
+
+        if (queue.isEmpty()) { // The queue is not empty
             System.out.println("The queue is empty");
-        }
-        else {
+        } else {
             System.out.println("The queue is not empty");
         }
     }
