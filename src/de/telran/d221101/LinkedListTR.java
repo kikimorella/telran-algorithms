@@ -8,14 +8,13 @@ import java.util.ListIterator;
 import java.util.PriorityQueue;
 import java.util.Queue;
 
-public class LInkedListTR {
+public class LinkedListTR {
 
     public static void main(String[] args) {
         Queue<String> queue = new PriorityQueue();
         queue.add("One");
         queue.add("Two");
         queue.add("Three");
-
 
         LinkedList<String> list = new LinkedList<>();
         list.addAll(queue);
@@ -25,7 +24,6 @@ public class LInkedListTR {
         list.add("Five");
         list.add("Six");
         System.out.println(list);
-
 
         list.clear();
         list = fillList(list);
