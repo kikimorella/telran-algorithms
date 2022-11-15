@@ -1,7 +1,12 @@
 package de.telran.d221101;
 
+// A -> B -> C -> null  reverse
+// null <- A <- B <- C
+// A -> B -> C -> D -> E -> F -> null  reverse(1, 3);
+// A -> D -> C -> B -> E -> F -> null
+
 public class Solution {
-    public ListNode reverseBetween(ListNode head, int m, int n) {
+    public static ListNode reverseBetween(ListNode head, int m, int n) {
         // Пустой list
         if (head == null) {
             return null;
@@ -28,7 +33,7 @@ public class Solution {
             prev = cur;
             cur = third;
             n--;
-        }
+        } // third = E; prev = D; current = Third
 
         // Adjust the final connections as explained in the algorithm
         if (con != null) {
